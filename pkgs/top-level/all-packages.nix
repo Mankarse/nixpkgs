@@ -6656,7 +6656,7 @@ with pkgs;
     ruby_2_0_0
     ruby_2_1_10
     ruby_2_2_7
-    ruby_2_3_4
+    ruby_2_3_5
     ruby_2_4_2;
 
   # Ruby aliases
@@ -6664,7 +6664,7 @@ with pkgs;
   ruby_2_0 = ruby_2_0_0;
   ruby_2_1 = ruby_2_1_10;
   ruby_2_2 = ruby_2_2_7;
-  ruby_2_3 = ruby_2_3_4;
+  ruby_2_3 = ruby_2_3_5;
   ruby_2_4 = ruby_2_4_2;
 
   scsh = callPackage ../development/interpreters/scsh { };
@@ -15376,7 +15376,7 @@ with pkgs;
 
   mercurialFull = appendToName "full" (pkgs.mercurial.override { guiSupport = true; });
 
-  merkaartor = callPackage ../applications/misc/merkaartor { };
+  merkaartor = libsForQt5.callPackage ../applications/misc/merkaartor { };
 
   meshlab = callPackage ../applications/graphics/meshlab { };
 
@@ -16012,6 +16012,8 @@ with pkgs;
   qgroundcontrol = libsForQt56.callPackage ../applications/science/robotics/qgroundcontrol { };
 
   qjackctl = libsForQt5.callPackage ../applications/audio/qjackctl { };
+
+  qmapshack = libsForQt5.callPackage ../applications/misc/qmapshack { };
 
   qmetro = callPackage ../applications/misc/qmetro { };
 
@@ -18459,6 +18461,9 @@ with pkgs;
   gappa = callPackage ../applications/science/logic/gappa { };
 
   gfan = callPackage ../applications/science/math/gfan {};
+
+  giac = callPackage ../applications/science/math/giac { };
+  giac-with-xcas = giac.override { enableGUI = true; };
 
   ginac = callPackage ../applications/science/math/ginac { };
 
